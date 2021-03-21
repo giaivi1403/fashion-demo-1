@@ -1,0 +1,1643 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Shopwise Mall</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&amp;display=swap"><link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/linearicons.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/carousel/owl.carousel.min.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/carousel/owl.theme.default.min.css"><link rel="stylesheet" href="https://cdn.rawgit.com/daneden/animate.css/v3.1.0/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/main.css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="loader">
+        <div class="loader__icon text-center mx-auto"><span class="mr-2"> </span><span class="mr-2"> </span><span class="mr-2"> </span></div>
+      </div>
+      <div class="modal fade" id="popup-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-body p-0">
+              <button class="close" type="button" data-dismiss="modal" aria-label="Close"><i class="fas fa-times"></i></button>
+              <div class="row no-gutters">
+                <div class="col-xl-5 col-md-5 popup__bgimg p-0 mb-dl-none"></div>
+                <div class="col-xl-7 col-md-7 col-12">
+                  <div class="popup__content text-center">
+                    <h4 class="popup__content-heading mb-4">Subscribe and Get 25% Discount!</h4>
+                    <p class="mb-4">Subscribe to the newsletter to receive updates about new products.</p>
+                    <form action="post"> 
+                      <div class="popup__content-input">
+                        <input class="w-100 px-3 mb-3" type="email" placeholder="Enter Your Email">
+                      </div><a class="btn btn-black w-100 mb-4 popup__content-btn" href="#">Subscribe</a>
+                    </form>
+                    <div class="popup__content-checkbox">
+                      <input type="checkbox" name="checkbox" id="checkbox">
+                      <label for="checkbox"><span class="ml-2">Don't show this popup again! </span></label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <header>
+        <div class="bd-bottom"></div>
+        <div class="detail py-3">
+          <div class="container">
+            <div class="row justify-content-between align-items-center">
+              <div class="col-12 col-xl-6 col-md-6 detail__left d-flex pl-4">
+                <div class="overlay"></div>
+                <div class="detail__left-item d-flex align-items-center detail__left-lg mr-3"> 
+                  <div class="d-flex align-items-center" id="lang-select"><img src="../assets/images/langSelect/eng.png" alt=""><span class="ml-2">English</span><i class="fas fa-angle-down ml-2"></i></div>
+                  <ul class="lang-list"> 
+                    <li class="lang-list__item px-3 py-2"><img src="../assets/images/langSelect/eng.png" alt=""><span class="ml-2">English</span></li>
+                    <li class="lang-list__item px-3 py-2"><img src="../assets/images/langSelect/fn.png" alt=""><span class="ml-2">France</span></li>
+                    <li class="lang-list__item px-3 py-2"><img src="../assets/images/langSelect/us.png" alt=""><span class="ml-2">United States</span></li>
+                  </ul>
+                </div>
+                <div class="detail__left-item d-flex align-items-center detail__left-money mr-3"> 
+                  <div class="d-flex align-items-center" id="money-select"><span>USD</span><i class="fas fa-angle-down ml-2"></i></div>
+                  <ul class="money-list"> 
+                    <li class="money-list__item px-3 py-2"><span>USD</span></li>
+                    <li class="money-list__item px-3 py-2"><span>GBR</span></li>
+                    <li class="money-list__item px-3 py-2"><span>EUR</span></li>
+                  </ul>
+                </div>
+                <div class="detail__left-item detail__left-phone d-flex align-items-center">
+                   <i class="ti-mobile mr-2"></i><span>123-456-7890</span></div>
+              </div>
+              <div class="col-12 col-xl-6 col-md-6 detail__right d-flex">
+                <div class="detail__right-item mr-3"><a class="hover d-flex align-items-center" href="#">
+                     <i class="mr-2 ti-control-shuffle"></i>Compare</a></div>
+                <div class="detail__right-item mr-3"><a class="hover d-flex align-items-center" href="#">
+                     <i class="mr-2 ti-heart"></i>Wishlist</a></div>
+                <div class="detail__right-item"><a class="hover d-flex align-items-center" href="#">
+                     <i class="mr-2 ti-user"></i>Login </a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="navbar p-0">
+          <div class="container">
+            <div class="row w-100 m-auto">
+              <div class="col-xl-4 col-md-4 col-6 navbar-img d-flex align-items-center"><a href="#"> <img src="../assets/images/header/logo_dark.png" alt=""></a></div>
+              <div class="col-xl-8 col-md-8 col-6 justify-content-end d-flex align-items-center position-unset">
+                <ul class="navbar-menu d-flex align-items-center mb-none">
+                  <li class="navbar-menu__item dropdown mr-3"><a class="hover active d-flex align-items-center mr-2" href="#">
+                       Home<i class="fas fa-angle-down ml-2"></i></a>
+                    <ul class="dropdown-menu">
+                      <li class="dropdown-item"> <a class="hover" href="#">Fashion 1</a></li>
+                      <li class="dropdown-item"> <a class="hover" href="#">Fashion 2</a></li>
+                      <li class="dropdown-item"> <a class="hover" href="#">Fashion 3</a></li>
+                      <li class="dropdown-item"> <a class="hover" href="#">Fashion 4</a></li>
+                      <li class="dropdown-item"> <a class="hover" href="#">Fashion 5</a></li>
+                    </ul>
+                  </li>
+                  <li class="navbar-menu__item dropdown mr-3"><a class="hover active d-flex align-items-center mr-2" href="#">
+                       Pages<i class="fas fa-angle-down ml-2"></i></a>
+                    <ul class="dropdown-menu">
+                      <li class="dropdown-item"> <a class="hover" href="#">About us</a></li>
+                      <li class="dropdown-item"> <a class="hover" href="#">Contact us</a></li>
+                      <li class="dropdown-item"> <a class="hover" href="#">Fag</a></li>
+                      <li class="dropdown-item"> <a class="hover" href="#">404 Error Page</a></li>
+                      <li class="dropdown-item"> <a class="hover" href="#">Login</a></li>
+                      <li class="dropdown-item"> <a class="hover" href="#">Register</a></li>
+                      <li class="dropdown-item"> <a class="hover" href="#">Terms And Conditions</a></li>
+                    </ul>
+                  </li>
+                  <li class="navbar-menu__item dropdown mr-3 position-unset"><a class="hover active d-flex align-items-center mr-2" href="#">
+                       Products<i class="fas fa-angle-down ml-2"></i></a>
+                    <div class="mega pb-4 pt-4">
+                      <div class="container">
+                        <ul class="mega__list d-flex mb-4">
+                          <li class="mega__list-item col-3">
+                            <h3 class="mb-3">Woman's</h3><a class="hover mb-3" href="#">Vestibulum sed</a><a class="hover mb-3" href="#">Donec porttitor</a><a class="hover mb-3" href="#">Donec vitae facilisis</a><a class="hover mb-3" href="#">Donec vitae facilisis</a><a class="hover mb-3" href="#">Donec vitae facilisis</a>
+                          </li>
+                          <li class="mega__list-item col-3">
+                            <h3 class="mb-3">Woman's</h3><a class="hover mb-3" href="#">Vestibulum sed</a><a class="hover mb-3" href="#">Donec porttitor</a><a class="hover mb-3" href="#">Donec vitae facilisis</a><a class="hover mb-3" href="#">Donec vitae facilisis</a><a class="hover mb-3" href="#">Donec vitae facilisis</a>
+                          </li>
+                          <li class="mega__list-item col-3">
+                            <h3 class="mb-3">Woman's</h3><a class="hover mb-3" href="#">Vestibulum sed</a><a class="hover mb-3" href="#">Donec porttitor</a><a class="hover mb-3" href="#">Donec vitae facilisis</a><a class="hover mb-3" href="#">Donec vitae facilisis</a><a class="hover mb-3" href="#">Donec vitae facilisis</a>
+                          </li>
+                          <li class="mega__list-item col-3">
+                            <h3 class="mb-3">Woman's</h3><a class="hover mb-3" href="#">Vestibulum sed</a><a class="hover mb-3" href="#">Donec porttitor</a><a class="hover mb-3" href="#">Donec vitae facilisis</a><a class="hover mb-3" href="#">Donec vitae facilisis</a><a class="hover mb-3" href="#">Donec vitae facilisis</a>
+                          </li>
+                        </ul>
+                        <div class="col-4 mega__banner">
+                          <div class="mega__banner-img"><img src="../assets/images/header/menu_banner1.jpg" alt=""></div>
+                          <div class="mega__banner-info"><span>10% Off</span>
+                            <h4 class="mt-2 mb-2">New Arrival</h4><a class="hover" href="#">Shop Now </a>
+                          </div>
+                        </div>
+                        <div class="col-4 mega__banner">
+                          <div class="mega__banner-img"><img src="../assets/images/header/menu_banner2.jpg" alt=""></div>
+                          <div class="mega__banner-info"><span>10% Off</span>
+                            <h4 class="mt-2 mb-2">New Arrival</h4><a class="hover" href="#">Shop Now </a>
+                          </div>
+                        </div>
+                        <div class="col-4 mega__banner">
+                          <div class="mega__banner-img"><img src="../assets/images/header/menu_banner3.jpg" alt=""></div>
+                          <div class="mega__banner-info"><span>10% Off</span>
+                            <h4 class="mt-2 mb-2">New Arrival</h4><a class="hover" href="#">Shop Now </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="navbar-menu__item dropdown mr-3"><a class="hover active d-flex align-items-center mr-2" href="#">
+                       Blog<i class="fas fa-angle-down ml-2"></i></a>
+                    <ul class="dropdown-menu-right dropdown-menu">
+                      <li class="dropdown-item dropleft"><a class="hover dropdown-item__active d-flex justify-content-between align-items-center" href="#">
+                           Fashion<i class="fas fa-angle-down ml-2"></i></a>
+                        <ul class="dropdown-submenu m-0">
+                          <li class="dropdown-item"><a class="hover" href="#">3 columns</a></li>
+                          <li class="dropdown-item"><a class="hover" href="#">4 columns</a></li>
+                          <li class="dropdown-item"><a class="hover" href="#">Left Sidebar</a></li>
+                          <li class="dropdown-item"><a class="hover" href="#">right Sidebar</a></li>
+                          <li class="dropdown-item"><a class="hover" href="#">Standard Left Sidebar</a></li>
+                          <li class="dropdown-item"><a class="hover" href="#">Standard Left Sidebar</a></li>
+                        </ul>
+                      </li>
+                      <li class="dropdown-item dropleft"><a class="hover dropdown-item__active d-flex justify-content-between align-items-center" href="#">
+                           Fashion<i class="fas fa-angle-down ml-2"></i></a>
+                        <ul class="dropdown-submenu m-0">
+                          <li class="dropdown-item"><a class="hover" href="#">3 columns</a></li>
+                          <li class="dropdown-item"><a class="hover" href="#">4 columns</a></li>
+                          <li class="dropdown-item"><a class="hover" href="#">Left Sidebar</a></li>
+                          <li class="dropdown-item"><a class="hover" href="#">right Sidebar</a></li>
+                          <li class="dropdown-item"><a class="hover" href="#">Standard Left Sidebar</a></li>
+                          <li class="dropdown-item"><a class="hover" href="#">Standard Left Sidebar</a></li>
+                        </ul>
+                      </li>
+                      <li class="dropdown-item dropleft"><a class="hover dropdown-item__active d-flex justify-content-between align-items-center" href="#">
+                           Fashion<i class="fas fa-angle-down ml-2"></i></a>
+                        <ul class="dropdown-submenu m-0">
+                          <li class="dropdown-item"><a class="hover" href="#">3 columns</a></li>
+                          <li class="dropdown-item"><a class="hover" href="#">4 columns</a></li>
+                          <li class="dropdown-item"><a class="hover" href="#">Left Sidebar</a></li>
+                          <li class="dropdown-item"><a class="hover" href="#">right Sidebar</a></li>
+                          <li class="dropdown-item"><a class="hover" href="#">Standard Left Sidebar</a></li>
+                          <li class="dropdown-item"><a class="hover" href="#">Standard Left Sidebar</a></li>
+                        </ul>
+                      </li>
+                      <li class="dropdown-item dropleft"><a class="hover dropdown-item__active d-flex justify-content-between align-items-center" href="#">
+                           Fashion<i class="fas fa-angle-down ml-2"></i></a>
+                        <ul class="dropdown-submenu m-0">
+                          <li class="dropdown-item"><a class="hover" href="#">3 columns</a></li>
+                          <li class="dropdown-item"><a class="hover" href="#">4 columns</a></li>
+                          <li class="dropdown-item"><a class="hover" href="#">Left Sidebar</a></li>
+                          <li class="dropdown-item"><a class="hover" href="#">right Sidebar</a></li>
+                          <li class="dropdown-item"><a class="hover" href="#">Standard Left Sidebar</a></li>
+                          <li class="dropdown-item"><a class="hover" href="#">Standard Left Sidebar</a></li>
+                        </ul>
+                      </li>
+                      <li class="dropdown-item dropleft"><a class="hover dropdown-item__active d-flex justify-content-between align-items-center" href="#">
+                           Fashion<i class="fas fa-angle-down ml-2"></i></a>
+                        <ul class="dropdown-submenu m-0">
+                          <li class="dropdown-item"><a class="hover" href="#">3 columns</a></li>
+                          <li class="dropdown-item"><a class="hover" href="#">4 columns</a></li>
+                          <li class="dropdown-item"><a class="hover" href="#">Left Sidebar</a></li>
+                          <li class="dropdown-item"><a class="hover" href="#">right Sidebar</a></li>
+                          <li class="dropdown-item"><a class="hover" href="#">Standard Left Sidebar</a></li>
+                          <li class="dropdown-item"><a class="hover" href="#">Standard Left Sidebar</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="navbar-menu__item dropdown mr-3 position-unset"><a class="hover active d-flex align-items-center mr-2" href="#">
+                       Shop  <i class="fas fa-angle-down ml-2"></i></a>
+                    <div class="mega pb-4 pt-4">
+                      <div class="container">
+                        <ul class="mega__list d-flex">
+                          <li class="mega__list-item col-3">
+                            <h3 class="mb-3">Shop Page Layout</h3><a class="hover mb-3" href="#">shop List view</a><a class="hover mb-3" href="#">shop List Left Sidebar</a><a class="hover mb-3" href="#">shop List Right Sidebar</a><a class="hover mb-3" href="#">Left Sidebar</a><a class="hover mb-3" href="#">Right Sidebar</a><a class="hover mb-3" href="#">Shop Load More</a>
+                          </li>
+                          <li class="mega__list-item col-3">
+                            <h3 class="mb-3">Shop Page Layout</h3><a class="hover mb-3" href="#">shop List view</a><a class="hover mb-3" href="#">shop List Left Sidebar</a><a class="hover mb-3" href="#">shop List Right Sidebar</a><a class="hover mb-3" href="#">Left Sidebar</a><a class="hover mb-3" href="#">Right Sidebar</a><a class="hover mb-3" href="#">Shop Load More</a>
+                          </li>
+                          <li class="mega__list-item col-3">
+                            <h3 class="mb-3">Shop Page Layout</h3><a class="hover mb-3" href="#">shop List view</a><a class="hover mb-3" href="#">shop List Left Sidebar</a><a class="hover mb-3" href="#">shop List Right Sidebar</a><a class="hover mb-3" href="#">Left Sidebar</a><a class="hover mb-3" href="#">Right Sidebar</a><a class="hover mb-3" href="#">Shop Load More</a>
+                          </li>
+                          <li class="mega__list-img col-3">
+                            <div class="img__overlay"> <img src="../assets/images/header/shop_banner.jpg" alt=""></div>
+                            <div class="img__info"> 
+                              <h5 class="img__info-title">New Collection</h5>
+                              <h4 class="img__info-sale">Sale 30% off</h4><a class="btn btn-white" href="#">Shop Now </a>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="navbar-menu__item dropdown mr-2"><a class="hover active mr-2 mb-1" href="#">
+                       Contact Us</a></li>
+                </ul>
+                <div class="navbar-search d-flex align-items-center"><a class="hover navbar-search__link" href="#"><i class="linearicons-magnifier"></i></a>
+                  <div class="search__wrap"><a class="search__close" href="#"><i class="fas fa-times"></i></a>
+                    <form class="d-flex align-items-center pb-3" action="">
+                      <input type="text" placeholder="Search"><a class="p-0" href="#"><i class="linearicons-magnifier"></i></a>
+                    </form>
+                  </div>
+                  <div class="search__overlay"></div>
+                </div>
+                <div class="navbar-cart d-flex align-items-center"><a class="hover notice" href="#">
+                     <i class="linearicons-cart"></i></a>
+                  <div class="cart__box p-3">
+                    <ul class="cart__box-list">
+                      <li class="pb-4"><a class="list__remove" href="#"><i class="fas fa-times"></i></a>
+                        <div class="list__item d-flex"><img src="../assets/images/header/cart_thamb1.jpg" alt="">
+                          <div class="list__item-content ml-3"><a class="hover" href="#">Variable product 001</a><span class="content__value mt-2">1 x $81.00</span></div>
+                        </div>
+                      </li>
+                      <li class="pb-4 mt-4"><a class="list__remove" href="#"><i class="fas fa-times"></i></a>
+                        <div class="list__item d-flex"><img src="../assets/images/header/cart_thamb1.jpg" alt="">
+                          <div class="list__item-content ml-3"><a class="hover" href="#">Variable product 001</a><span class="content__value mt-2">1 x $81.00</span></div>
+                        </div>
+                      </li>
+                    </ul>
+                    <div class="cart__box-total d-flex justify-content-between mt-3"><span>Subtotal :</span><span>$159.00</span></div>
+                    <div class="cart__btn mt-3 d-flex justify-content-center"><a class="btn btn-black mr-2" href="#">View Cart</a><a class="btn btn-red" href="#">Checkout  </a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div class="slider owl-carousel">
+        <div class="slider__wrap w-100 h-100" style="background-image:url(../assets/images/slider/banner2.jpg)">
+          <div class="container h-100">
+            <div class="row h-100 align-items-center">
+              <div class="col-12 slider__item pl-5 overflow-hidden">
+                <h5 class="wow slideInLeft" data-wow-delay="0.6s">50% off in all products</h5>
+                <h2 class="wow slideInLeft mt-3 mb-3" data-wow-delay="1s">Man Fashion</h2><a class="wow slideInLeft btn btn-red" href="#" data-wow-delay="1.4s">Shop Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="slider__wrap w-100 h-100" style="background-image:url(../assets/images/slider/banner3.jpg)">
+          <div class="container h-100">
+            <div class="row h-100 align-items-center">
+              <div class="col-12 slider__item pl-5 overflow-hidden">
+                <h5 class="wow slideInLeft" data-wow-delay="0.6s">Taking your Viewing Experience to Next Level</h5>
+                <h2 class="wow slideInLeft mt-3 mb-3" data-wow-delay="1s">Summer Sale</h2><a class="wow slideInLeft btn btn-red" href="#" data-wow-delay="1.4s">Shop Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="slider__wrap w-100 h-100" style="background-image:url(../assets/images/slider/banner1.jpg)">
+          <div class="container h-100">
+            <div class="row h-100 align-items-center">
+              <div class="col-12 slider__item pl-5 overflow-hidden">
+                <h5 class="wow slideInLeft" data-wow-delay="0.6s">Get up to 50% off Today Only!</h5>
+                <h2 class="wow slideInLeft mt-3 mb-3" data-wow-delay="1s">Woman Fashion</h2><a class="wow slideInLeft btn btn-red" href="#" data-wow-delay="1.4s">Shop Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="banner p-5 p-cus">
+        <div class="container">
+          <div class="row">
+            <div class="col-xl-6 col-md-6 col-12 overflow-hidden p-mb-0">
+              <div class="banner__box"><img src="../assets/images/banner/shop_banner_img1.jpg" alt="">
+                <div class="banner__box-info">
+                  <h4 class="info__content">Super Sale</h4>
+                  <h3 class="info__title">New Collection</h3><a class="hover" href="#">Shop Now</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-6 col-md-6 col-12 overflow-hidden p-mb-0">
+              <div class="banner__box"><img src="../assets/images/banner/shop_banner_img2.jpg" alt="">
+                <div class="banner__box-info">
+                  <h3 class="info__title">New Season</h3>
+                  <h5 class="info__content">Sale 40% Off</h5><a class="hover" href="#">Shop Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="exclusive p-5 p-cus">
+        <div class="container">
+          <div class="row justify-content-center mb-3">
+            <div class="col-7 text-center">
+              <h2 class="title">Exclusive Products</h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <ul class="exclusive__link d-flex justify-content-center flex-wrap">
+                <li class="mx-3 mb-2"><a class="hover active" href="#" id="new">New Arrival</a></li>
+                <li class="mx-3 mb-2"><a class="hover" href="#" id="best">Best Sellers</a></li>
+                <li class="mx-3 mb-2"><a class="hover" href="#" id="featured">Featured</a></li>
+                <li class="mx-3 mb-2"><a class="hover" href="#" id="special">Special Offer</a></li>
+              </ul>
+              <div class="exclusive__tab mt-3">
+                <div class="exclusive__tab-item active show" data-tab="new">
+                  <div class="row">
+                    <div class="col-lg-3 col-md-4 mt-3 p-mb-0 mt-mb-0">
+                                            <div class="product">
+                                              <div class="product__hot"><span>Hot</span></div>
+                                              <div class="product__img"><img src="../assets/images/product/product_img1.jpg" alt="">
+                                                <ul class="product__img-action d-flex align-items-center justify-content-between">
+                                                  <li><a class="hover" href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="fas fa-random"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="fas fa-search-plus"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="far fa-heart"></i></a></li>
+                                                </ul>
+                                              </div>
+                                              <div class="product__info p-3">
+                                                <h6 class="product__info-title"> <a class="hover" href="#">Blue Dress For Woman</a></h6>
+                                                <div class="product__info-price"><span class="price mr-1">$45.00</span>
+                                                  <del>$55.25</del><span class="price__sale ml-2">25% Off</span>
+                                                </div>
+                                                <div class="product__info-rate">
+                                                  <div class="star">
+                                                    <div class="star__wrap mr-2">
+                                                      <div class="star__icon"></div>
+                                                    </div><span>(22)</span>
+                                                  </div>
+                                                </div>
+                                                <div class="product__info-color">
+                                                  <div class="color d-flex align-items-center"><span class="active mr-3 color__blue"></span><span class="mr-3 color__red"></span><span class="mr-3 color__yellow"></span></div>
+                                                </div>
+                                              </div>
+                                            </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 mt-3 p-mb-0 mt-mb-0">
+                                            <div class="product">
+                                              <div class="product__sale"><span>Sale</span></div>
+                                              <div class="product__img"><img src="../assets/images/product/product_img2.jpg" alt="">
+                                                <ul class="product__img-action d-flex align-items-center justify-content-between">
+                                                  <li><a class="hover" href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="fas fa-random"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="fas fa-search-plus"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="far fa-heart"></i></a></li>
+                                                </ul>
+                                              </div>
+                                              <div class="product__info p-3">
+                                                <h6 class="product__info-title"> <a class="hover" href="#">Lether Gray Tuxedo</a></h6>
+                                                <div class="product__info-price"><span class="price mr-1">$55.00</span>
+                                                  <del>$95.25</del><span class="price__sale ml-2">25% Off</span>
+                                                </div>
+                                                <div class="product__info-rate">
+                                                  <div class="star">
+                                                    <div class="star__wrap mr-2">
+                                                      <div class="star__icon"></div>
+                                                    </div><span>(22)</span>
+                                                  </div>
+                                                </div>
+                                                <div class="product__info-color">
+                                                  <div class="color d-flex align-items-center"><span class="active mr-3 color__blue"></span><span class="mr-3 color__red"></span><span class="mr-3 color__yellow"></span></div>
+                                                </div>
+                                              </div>
+                                            </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 mt-3 p-mb-0 mt-mb-0">
+                                            <div class="product">
+                                              <div class="product__img"><img src="../assets/images/product/product_img3.jpg" alt="">
+                                                <ul class="product__img-action d-flex align-items-center justify-content-between">
+                                                  <li><a class="hover" href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="fas fa-random"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="fas fa-search-plus"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="far fa-heart"></i></a></li>
+                                                </ul>
+                                              </div>
+                                              <div class="product__info p-3">
+                                                <h6 class="product__info-title"> <a class="hover" href="#">woman full sliv dress</a></h6>
+                                                <div class="product__info-price"><span class="price mr-1">$68.00</span>
+                                                  <del>$99.25</del><span class="price__sale ml-2">25% Off</span>
+                                                </div>
+                                                <div class="product__info-rate">
+                                                  <div class="star">
+                                                    <div class="star__wrap mr-2">
+                                                      <div class="star__icon"></div>
+                                                    </div><span>(22)</span>
+                                                  </div>
+                                                </div>
+                                                <div class="product__info-color">
+                                                  <div class="color d-flex align-items-center"><span class="active mr-3 color__blue"></span><span class="mr-3 color__red"></span><span class="mr-3 color__yellow"></span></div>
+                                                </div>
+                                              </div>
+                                            </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 mt-3 p-mb-0 mt-mb-0">
+                                            <div class="product">
+                                              <div class="product__new"><span>New </span></div>
+                                              <div class="product__img"><img src="../assets/images/product/product_img4.jpg" alt="">
+                                                <ul class="product__img-action d-flex align-items-center justify-content-between">
+                                                  <li><a class="hover" href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="fas fa-random"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="fas fa-search-plus"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="far fa-heart"></i></a></li>
+                                                </ul>
+                                              </div>
+                                              <div class="product__info p-3">
+                                                <h6 class="product__info-title"> <a class="hover" href="#">light blue Shirt</a></h6>
+                                                <div class="product__info-price"><span class="price mr-1">$69.00</span>
+                                                  <del>$89.00</del><span class="price__sale ml-2">20% Off</span>
+                                                </div>
+                                                <div class="product__info-rate">
+                                                  <div class="star">
+                                                    <div class="star__wrap mr-2">
+                                                      <div class="star__icon"></div>
+                                                    </div><span>(22)</span>
+                                                  </div>
+                                                </div>
+                                                <div class="product__info-color">
+                                                  <div class="color d-flex align-items-center"><span class="active mr-3 color__blue"></span><span class="mr-3 color__red"></span><span class="mr-3 color__yellow"></span></div>
+                                                </div>
+                                              </div>
+                                            </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 mt-3 p-mb-0 mt-mb-0">
+                                            <div class="product">
+                                              <div class="product__sale"><span>Sale</span></div>
+                                              <div class="product__img"><img src="../assets/images/product/product_img5.jpg" alt="">
+                                                <ul class="product__img-action d-flex align-items-center justify-content-between">
+                                                  <li><a class="hover" href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="fas fa-random"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="fas fa-search-plus"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="far fa-heart"></i></a></li>
+                                                </ul>
+                                              </div>
+                                              <div class="product__info p-3">
+                                                <h6 class="product__info-title"> <a class="hover" href="#">blue dress for woman</a></h6>
+                                                <div class="product__info-price"><span class="price mr-1">$45.00</span>
+                                                  <del>$55.25</del><span class="price__sale ml-2">35% Off</span>
+                                                </div>
+                                                <div class="product__info-rate">
+                                                  <div class="star">
+                                                    <div class="star__wrap mr-2">
+                                                      <div class="star__icon"></div>
+                                                    </div><span>(22)</span>
+                                                  </div>
+                                                </div>
+                                                <div class="product__info-color">
+                                                  <div class="color d-flex align-items-center"><span class="active mr-3 color__blue"></span><span class="mr-3 color__red"></span><span class="mr-3 color__yellow"></span></div>
+                                                </div>
+                                              </div>
+                                            </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 mt-3 p-mb-0 mt-mb-0">
+                                            <div class="product">
+                                              <div class="product__hot"><span>Hot</span></div>
+                                              <div class="product__img"><img src="../assets/images/product/product_img6.jpg" alt="">
+                                                <ul class="product__img-action d-flex align-items-center justify-content-between">
+                                                  <li><a class="hover" href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="fas fa-random"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="fas fa-search-plus"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="far fa-heart"></i></a></li>
+                                                </ul>
+                                              </div>
+                                              <div class="product__info p-3">
+                                                <h6 class="product__info-title"> <a class="hover" href="#">blue dress for woman</a></h6>
+                                                <div class="product__info-price"><span class="price mr-1">$45.00</span>
+                                                  <del>$55.25</del><span class="price__sale ml-2">35% Off</span>
+                                                </div>
+                                                <div class="product__info-rate">
+                                                  <div class="star">
+                                                    <div class="star__wrap mr-2">
+                                                      <div class="star__icon"></div>
+                                                    </div><span>(22)</span>
+                                                  </div>
+                                                </div>
+                                                <div class="product__info-color">
+                                                  <div class="color d-flex align-items-center"><span class="active mr-3 color__blue"></span><span class="mr-3 color__red"></span><span class="mr-3 color__yellow"></span></div>
+                                                </div>
+                                              </div>
+                                            </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 mt-3 p-mb-0 mt-mb-0">
+                                            <div class="product">
+                                              <div class="product__img"><img src="../assets/images/product/product_img7.jpg" alt="">
+                                                <ul class="product__img-action d-flex align-items-center justify-content-between">
+                                                  <li><a class="hover" href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="fas fa-random"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="fas fa-search-plus"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="far fa-heart"></i></a></li>
+                                                </ul>
+                                              </div>
+                                              <div class="product__info p-3">
+                                                <h6 class="product__info-title"> <a class="hover" href="#">blue dress for woman</a></h6>
+                                                <div class="product__info-price"><span class="price mr-1">$45.00</span>
+                                                  <del>$55.25</del><span class="price__sale ml-2">35% Off</span>
+                                                </div>
+                                                <div class="product__info-rate">
+                                                  <div class="star">
+                                                    <div class="star__wrap mr-2">
+                                                      <div class="star__icon"></div>
+                                                    </div><span>(22)</span>
+                                                  </div>
+                                                </div>
+                                                <div class="product__info-color">
+                                                  <div class="color d-flex align-items-center"><span class="active mr-3 color__blue"></span><span class="mr-3 color__red"></span><span class="mr-3 color__yellow"></span></div>
+                                                </div>
+                                              </div>
+                                            </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 mt-3 p-mb-0 mt-mb-0">
+                                            <div class="product">
+                                              <div class="product__img"><img src="../assets/images/product/product_img8.jpg" alt="">
+                                                <ul class="product__img-action d-flex align-items-center justify-content-between">
+                                                  <li><a class="hover" href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="fas fa-random"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="fas fa-search-plus"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="far fa-heart"></i></a></li>
+                                                </ul>
+                                              </div>
+                                              <div class="product__info p-3">
+                                                <h6 class="product__info-title"> <a class="hover" href="#">blue dress for woman</a></h6>
+                                                <div class="product__info-price"><span class="price mr-1">$45.00</span>
+                                                  <del>$55.25</del><span class="price__sale ml-2">35% Off</span>
+                                                </div>
+                                                <div class="product__info-rate">
+                                                  <div class="star">
+                                                    <div class="star__wrap mr-2">
+                                                      <div class="star__icon"></div>
+                                                    </div><span>(22)</span>
+                                                  </div>
+                                                </div>
+                                                <div class="product__info-color">
+                                                  <div class="color d-flex align-items-center"><span class="active mr-3 color__blue"></span><span class="mr-3 color__red"></span><span class="mr-3 color__yellow"></span></div>
+                                                </div>
+                                              </div>
+                                            </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="exclusive__tab-item" data-tab="best">
+                  <div class="row">
+                    <div class="col-lg-3 col-md-4 mt-3 p-mb-0 mt-mb-0">
+                                            <div class="product">
+                                              <div class="product__hot"><span>Hot</span></div>
+                                              <div class="product__img"><img src="../assets/images/product/product_img2.jpg" alt="">
+                                                <ul class="product__img-action d-flex align-items-center justify-content-between">
+                                                  <li><a class="hover" href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="fas fa-random"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="fas fa-search-plus"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="far fa-heart"></i></a></li>
+                                                </ul>
+                                              </div>
+                                              <div class="product__info p-3">
+                                                <h6 class="product__info-title"> <a class="hover" href="#">blue dress for woman</a></h6>
+                                                <div class="product__info-price"><span class="price mr-1">$45.00</span>
+                                                  <del>$55.25</del><span class="price__sale ml-2">35% Off</span>
+                                                </div>
+                                                <div class="product__info-rate">
+                                                  <div class="star">
+                                                    <div class="star__wrap mr-2">
+                                                      <div class="star__icon"></div>
+                                                    </div><span>(22)</span>
+                                                  </div>
+                                                </div>
+                                                <div class="product__info-color">
+                                                  <div class="color d-flex align-items-center"><span class="active mr-3 color__blue"></span><span class="mr-3 color__red"></span><span class="mr-3 color__yellow"></span></div>
+                                                </div>
+                                              </div>
+                                            </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 mt-3 p-mb-0 mt-mb-0">
+                                            <div class="product">
+                                              <div class="product__img"><img src="../assets/images/product/product_img4.jpg" alt="">
+                                                <ul class="product__img-action d-flex align-items-center justify-content-between">
+                                                  <li><a class="hover" href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="fas fa-random"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="fas fa-search-plus"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="far fa-heart"></i></a></li>
+                                                </ul>
+                                              </div>
+                                              <div class="product__info p-3">
+                                                <h6 class="product__info-title"> <a class="hover" href="#">blue dress for woman</a></h6>
+                                                <div class="product__info-price"><span class="price mr-1">$45.00</span>
+                                                  <del>$55.25</del><span class="price__sale ml-2">35% Off</span>
+                                                </div>
+                                                <div class="product__info-rate">
+                                                  <div class="star">
+                                                    <div class="star__wrap mr-2">
+                                                      <div class="star__icon"></div>
+                                                    </div><span>(22)</span>
+                                                  </div>
+                                                </div>
+                                                <div class="product__info-color">
+                                                  <div class="color d-flex align-items-center"><span class="active mr-3 color__blue"></span><span class="mr-3 color__red"></span><span class="mr-3 color__yellow"></span></div>
+                                                </div>
+                                              </div>
+                                            </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 mt-3 p-mb-0 mt-mb-0">
+                                            <div class="product">
+                                              <div class="product__img"><img src="../assets/images/product/product_img3.jpg" alt="">
+                                                <ul class="product__img-action d-flex align-items-center justify-content-between">
+                                                  <li><a class="hover" href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="fas fa-random"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="fas fa-search-plus"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="far fa-heart"></i></a></li>
+                                                </ul>
+                                              </div>
+                                              <div class="product__info p-3">
+                                                <h6 class="product__info-title"> <a class="hover" href="#">blue dress for woman</a></h6>
+                                                <div class="product__info-price"><span class="price mr-1">$45.00</span>
+                                                  <del>$55.25</del><span class="price__sale ml-2">35% Off</span>
+                                                </div>
+                                                <div class="product__info-rate">
+                                                  <div class="star">
+                                                    <div class="star__wrap mr-2">
+                                                      <div class="star__icon"></div>
+                                                    </div><span>(22)</span>
+                                                  </div>
+                                                </div>
+                                                <div class="product__info-color">
+                                                  <div class="color d-flex align-items-center"><span class="active mr-3 color__blue"></span><span class="mr-3 color__red"></span><span class="mr-3 color__yellow"></span></div>
+                                                </div>
+                                              </div>
+                                            </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 mt-3 p-mb-0 mt-mb-0">
+                                            <div class="product">
+                                              <div class="product__sale"><span>Sale</span></div>
+                                              <div class="product__img"><img src="../assets/images/product/product_img12.jpg" alt="">
+                                                <ul class="product__img-action d-flex align-items-center justify-content-between">
+                                                  <li><a class="hover" href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="fas fa-random"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="fas fa-search-plus"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="far fa-heart"></i></a></li>
+                                                </ul>
+                                              </div>
+                                              <div class="product__info p-3">
+                                                <h6 class="product__info-title"> <a class="hover" href="#">blue dress for woman</a></h6>
+                                                <div class="product__info-price"><span class="price mr-1">$45.00</span>
+                                                  <del>$55.25</del><span class="price__sale ml-2">35% Off</span>
+                                                </div>
+                                                <div class="product__info-rate">
+                                                  <div class="star">
+                                                    <div class="star__wrap mr-2">
+                                                      <div class="star__icon"></div>
+                                                    </div><span>(22)</span>
+                                                  </div>
+                                                </div>
+                                                <div class="product__info-color">
+                                                  <div class="color d-flex align-items-center"><span class="active mr-3 color__blue"></span><span class="mr-3 color__red"></span><span class="mr-3 color__yellow"></span></div>
+                                                </div>
+                                              </div>
+                                            </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 mt-3 p-mb-0 mt-mb-0">
+                                            <div class="product">
+                                              <div class="product__img"><img src="../assets/images/product/product_img9.jpg" alt="">
+                                                <ul class="product__img-action d-flex align-items-center justify-content-between">
+                                                  <li><a class="hover" href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="fas fa-random"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="fas fa-search-plus"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="far fa-heart"></i></a></li>
+                                                </ul>
+                                              </div>
+                                              <div class="product__info p-3">
+                                                <h6 class="product__info-title"> <a class="hover" href="#">blue dress for woman</a></h6>
+                                                <div class="product__info-price"><span class="price mr-1">$45.00</span>
+                                                  <del>$55.25</del><span class="price__sale ml-2">35% Off</span>
+                                                </div>
+                                                <div class="product__info-rate">
+                                                  <div class="star">
+                                                    <div class="star__wrap mr-2">
+                                                      <div class="star__icon"></div>
+                                                    </div><span>(22)</span>
+                                                  </div>
+                                                </div>
+                                                <div class="product__info-color">
+                                                  <div class="color d-flex align-items-center"><span class="active mr-3 color__blue"></span><span class="mr-3 color__red"></span><span class="mr-3 color__yellow"></span></div>
+                                                </div>
+                                              </div>
+                                            </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 mt-3 p-mb-0 mt-mb-0">
+                                            <div class="product">
+                                              <div class="product__new"><span>New </span></div>
+                                              <div class="product__img"><img src="../assets/images/product/product_img6.jpg" alt="">
+                                                <ul class="product__img-action d-flex align-items-center justify-content-between">
+                                                  <li><a class="hover" href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="fas fa-random"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="fas fa-search-plus"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="far fa-heart"></i></a></li>
+                                                </ul>
+                                              </div>
+                                              <div class="product__info p-3">
+                                                <h6 class="product__info-title"> <a class="hover" href="#">blue dress for woman</a></h6>
+                                                <div class="product__info-price"><span class="price mr-1">$45.00</span>
+                                                  <del>$55.25</del><span class="price__sale ml-2">35% Off</span>
+                                                </div>
+                                                <div class="product__info-rate">
+                                                  <div class="star">
+                                                    <div class="star__wrap mr-2">
+                                                      <div class="star__icon"></div>
+                                                    </div><span>(22)</span>
+                                                  </div>
+                                                </div>
+                                                <div class="product__info-color">
+                                                  <div class="color d-flex align-items-center"><span class="active mr-3 color__blue"></span><span class="mr-3 color__red"></span><span class="mr-3 color__yellow"></span></div>
+                                                </div>
+                                              </div>
+                                            </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 mt-3 p-mb-0 mt-mb-0">
+                                            <div class="product">
+                                              <div class="product__img"><img src="../assets/images/product/product_img8.jpg" alt="">
+                                                <ul class="product__img-action d-flex align-items-center justify-content-between">
+                                                  <li><a class="hover" href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="fas fa-random"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="fas fa-search-plus"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="far fa-heart"></i></a></li>
+                                                </ul>
+                                              </div>
+                                              <div class="product__info p-3">
+                                                <h6 class="product__info-title"> <a class="hover" href="#">blue dress for woman</a></h6>
+                                                <div class="product__info-price"><span class="price mr-1">$45.00</span>
+                                                  <del>$55.25</del><span class="price__sale ml-2">35% Off</span>
+                                                </div>
+                                                <div class="product__info-rate">
+                                                  <div class="star">
+                                                    <div class="star__wrap mr-2">
+                                                      <div class="star__icon"></div>
+                                                    </div><span>(22)</span>
+                                                  </div>
+                                                </div>
+                                                <div class="product__info-color">
+                                                  <div class="color d-flex align-items-center"><span class="active mr-3 color__blue"></span><span class="mr-3 color__red"></span><span class="mr-3 color__yellow"></span></div>
+                                                </div>
+                                              </div>
+                                            </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 mt-3 p-mb-0 mt-mb-0">
+                                            <div class="product">
+                                              <div class="product__hot"><span>Hot</span></div>
+                                              <div class="product__img"><img src="../assets/images/product/product_img7.jpg" alt="">
+                                                <ul class="product__img-action d-flex align-items-center justify-content-between">
+                                                  <li><a class="hover" href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="fas fa-random"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="fas fa-search-plus"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="far fa-heart"></i></a></li>
+                                                </ul>
+                                              </div>
+                                              <div class="product__info p-3">
+                                                <h6 class="product__info-title"> <a class="hover" href="#">blue dress for woman</a></h6>
+                                                <div class="product__info-price"><span class="price mr-1">$45.00</span>
+                                                  <del>$55.25</del><span class="price__sale ml-2">35% Off</span>
+                                                </div>
+                                                <div class="product__info-rate">
+                                                  <div class="star">
+                                                    <div class="star__wrap mr-2">
+                                                      <div class="star__icon"></div>
+                                                    </div><span>(22)</span>
+                                                  </div>
+                                                </div>
+                                                <div class="product__info-color">
+                                                  <div class="color d-flex align-items-center"><span class="active mr-3 color__blue"></span><span class="mr-3 color__red"></span><span class="mr-3 color__yellow"></span></div>
+                                                </div>
+                                              </div>
+                                            </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="exclusive__tab-item" data-tab="featured">
+                  <div class="row">
+                    <div class="col-lg-3 col-md-4 mt-3 p-mb-0 mt-mb-0">
+                                            <div class="product">
+                                              <div class="product__hot"><span>Hot</span></div>
+                                              <div class="product__img"><img src="../assets/images/product/product_img1.jpg" alt="">
+                                                <ul class="product__img-action d-flex align-items-center justify-content-between">
+                                                  <li><a class="hover" href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="fas fa-random"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="fas fa-search-plus"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="far fa-heart"></i></a></li>
+                                                </ul>
+                                              </div>
+                                              <div class="product__info p-3">
+                                                <h6 class="product__info-title"> <a class="hover" href="#">Blue Dress For Woman</a></h6>
+                                                <div class="product__info-price"><span class="price mr-1">$45.00</span>
+                                                  <del>$55.25</del><span class="price__sale ml-2">25% Off</span>
+                                                </div>
+                                                <div class="product__info-rate">
+                                                  <div class="star">
+                                                    <div class="star__wrap mr-2">
+                                                      <div class="star__icon"></div>
+                                                    </div><span>(22)</span>
+                                                  </div>
+                                                </div>
+                                                <div class="product__info-color">
+                                                  <div class="color d-flex align-items-center"><span class="active mr-3 color__blue"></span><span class="mr-3 color__red"></span><span class="mr-3 color__yellow"></span></div>
+                                                </div>
+                                              </div>
+                                            </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 mt-3 p-mb-0 mt-mb-0">
+                                            <div class="product">
+                                              <div class="product__sale"><span>Sale</span></div>
+                                              <div class="product__img"><img src="../assets/images/product/product_img2.jpg" alt="">
+                                                <ul class="product__img-action d-flex align-items-center justify-content-between">
+                                                  <li><a class="hover" href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="fas fa-random"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="fas fa-search-plus"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="far fa-heart"></i></a></li>
+                                                </ul>
+                                              </div>
+                                              <div class="product__info p-3">
+                                                <h6 class="product__info-title"> <a class="hover" href="#">Lether Gray Tuxedo</a></h6>
+                                                <div class="product__info-price"><span class="price mr-1">$55.00</span>
+                                                  <del>$95.25</del><span class="price__sale ml-2">25% Off</span>
+                                                </div>
+                                                <div class="product__info-rate">
+                                                  <div class="star">
+                                                    <div class="star__wrap mr-2">
+                                                      <div class="star__icon"></div>
+                                                    </div><span>(22)</span>
+                                                  </div>
+                                                </div>
+                                                <div class="product__info-color">
+                                                  <div class="color d-flex align-items-center"><span class="active mr-3 color__blue"></span><span class="mr-3 color__red"></span><span class="mr-3 color__yellow"></span></div>
+                                                </div>
+                                              </div>
+                                            </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 mt-3 p-mb-0 mt-mb-0">
+                                            <div class="product">
+                                              <div class="product__img"><img src="../assets/images/product/product_img3.jpg" alt="">
+                                                <ul class="product__img-action d-flex align-items-center justify-content-between">
+                                                  <li><a class="hover" href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="fas fa-random"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="fas fa-search-plus"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="far fa-heart"></i></a></li>
+                                                </ul>
+                                              </div>
+                                              <div class="product__info p-3">
+                                                <h6 class="product__info-title"> <a class="hover" href="#">woman full sliv dress</a></h6>
+                                                <div class="product__info-price"><span class="price mr-1">$68.00</span>
+                                                  <del>$99.25</del><span class="price__sale ml-2">25% Off</span>
+                                                </div>
+                                                <div class="product__info-rate">
+                                                  <div class="star">
+                                                    <div class="star__wrap mr-2">
+                                                      <div class="star__icon"></div>
+                                                    </div><span>(22)</span>
+                                                  </div>
+                                                </div>
+                                                <div class="product__info-color">
+                                                  <div class="color d-flex align-items-center"><span class="active mr-3 color__blue"></span><span class="mr-3 color__red"></span><span class="mr-3 color__yellow"></span></div>
+                                                </div>
+                                              </div>
+                                            </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 mt-3 p-mb-0 mt-mb-0">
+                                            <div class="product">
+                                              <div class="product__new"><span>New </span></div>
+                                              <div class="product__img"><img src="../assets/images/product/product_img4.jpg" alt="">
+                                                <ul class="product__img-action d-flex align-items-center justify-content-between">
+                                                  <li><a class="hover" href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="fas fa-random"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="fas fa-search-plus"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="far fa-heart"></i></a></li>
+                                                </ul>
+                                              </div>
+                                              <div class="product__info p-3">
+                                                <h6 class="product__info-title"> <a class="hover" href="#">light blue Shirt</a></h6>
+                                                <div class="product__info-price"><span class="price mr-1">$69.00</span>
+                                                  <del>$89.00</del><span class="price__sale ml-2">20% Off</span>
+                                                </div>
+                                                <div class="product__info-rate">
+                                                  <div class="star">
+                                                    <div class="star__wrap mr-2">
+                                                      <div class="star__icon"></div>
+                                                    </div><span>(22)</span>
+                                                  </div>
+                                                </div>
+                                                <div class="product__info-color">
+                                                  <div class="color d-flex align-items-center"><span class="active mr-3 color__blue"></span><span class="mr-3 color__red"></span><span class="mr-3 color__yellow"></span></div>
+                                                </div>
+                                              </div>
+                                            </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 mt-3 p-mb-0 mt-mb-0">
+                                            <div class="product">
+                                              <div class="product__sale"><span>Sale</span></div>
+                                              <div class="product__img"><img src="../assets/images/product/product_img5.jpg" alt="">
+                                                <ul class="product__img-action d-flex align-items-center justify-content-between">
+                                                  <li><a class="hover" href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="fas fa-random"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="fas fa-search-plus"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="far fa-heart"></i></a></li>
+                                                </ul>
+                                              </div>
+                                              <div class="product__info p-3">
+                                                <h6 class="product__info-title"> <a class="hover" href="#">blue dress for woman</a></h6>
+                                                <div class="product__info-price"><span class="price mr-1">$45.00</span>
+                                                  <del>$55.25</del><span class="price__sale ml-2">35% Off</span>
+                                                </div>
+                                                <div class="product__info-rate">
+                                                  <div class="star">
+                                                    <div class="star__wrap mr-2">
+                                                      <div class="star__icon"></div>
+                                                    </div><span>(22)</span>
+                                                  </div>
+                                                </div>
+                                                <div class="product__info-color">
+                                                  <div class="color d-flex align-items-center"><span class="active mr-3 color__blue"></span><span class="mr-3 color__red"></span><span class="mr-3 color__yellow"></span></div>
+                                                </div>
+                                              </div>
+                                            </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 mt-3 p-mb-0 mt-mb-0">
+                                            <div class="product">
+                                              <div class="product__hot"><span>Hot</span></div>
+                                              <div class="product__img"><img src="../assets/images/product/product_img6.jpg" alt="">
+                                                <ul class="product__img-action d-flex align-items-center justify-content-between">
+                                                  <li><a class="hover" href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="fas fa-random"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="fas fa-search-plus"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="far fa-heart"></i></a></li>
+                                                </ul>
+                                              </div>
+                                              <div class="product__info p-3">
+                                                <h6 class="product__info-title"> <a class="hover" href="#">blue dress for woman</a></h6>
+                                                <div class="product__info-price"><span class="price mr-1">$45.00</span>
+                                                  <del>$55.25</del><span class="price__sale ml-2">35% Off</span>
+                                                </div>
+                                                <div class="product__info-rate">
+                                                  <div class="star">
+                                                    <div class="star__wrap mr-2">
+                                                      <div class="star__icon"></div>
+                                                    </div><span>(22)</span>
+                                                  </div>
+                                                </div>
+                                                <div class="product__info-color">
+                                                  <div class="color d-flex align-items-center"><span class="active mr-3 color__blue"></span><span class="mr-3 color__red"></span><span class="mr-3 color__yellow"></span></div>
+                                                </div>
+                                              </div>
+                                            </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 mt-3 p-mb-0 mt-mb-0">
+                                            <div class="product">
+                                              <div class="product__img"><img src="../assets/images/product/product_img7.jpg" alt="">
+                                                <ul class="product__img-action d-flex align-items-center justify-content-between">
+                                                  <li><a class="hover" href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="fas fa-random"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="fas fa-search-plus"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="far fa-heart"></i></a></li>
+                                                </ul>
+                                              </div>
+                                              <div class="product__info p-3">
+                                                <h6 class="product__info-title"> <a class="hover" href="#">blue dress for woman</a></h6>
+                                                <div class="product__info-price"><span class="price mr-1">$45.00</span>
+                                                  <del>$55.25</del><span class="price__sale ml-2">35% Off</span>
+                                                </div>
+                                                <div class="product__info-rate">
+                                                  <div class="star">
+                                                    <div class="star__wrap mr-2">
+                                                      <div class="star__icon"></div>
+                                                    </div><span>(22)</span>
+                                                  </div>
+                                                </div>
+                                                <div class="product__info-color">
+                                                  <div class="color d-flex align-items-center"><span class="active mr-3 color__blue"></span><span class="mr-3 color__red"></span><span class="mr-3 color__yellow"></span></div>
+                                                </div>
+                                              </div>
+                                            </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 mt-3 p-mb-0 mt-mb-0">
+                                            <div class="product">
+                                              <div class="product__img"><img src="../assets/images/product/product_img8.jpg" alt="">
+                                                <ul class="product__img-action d-flex align-items-center justify-content-between">
+                                                  <li><a class="hover" href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="fas fa-random"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="fas fa-search-plus"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="far fa-heart"></i></a></li>
+                                                </ul>
+                                              </div>
+                                              <div class="product__info p-3">
+                                                <h6 class="product__info-title"> <a class="hover" href="#">blue dress for woman</a></h6>
+                                                <div class="product__info-price"><span class="price mr-1">$45.00</span>
+                                                  <del>$55.25</del><span class="price__sale ml-2">35% Off</span>
+                                                </div>
+                                                <div class="product__info-rate">
+                                                  <div class="star">
+                                                    <div class="star__wrap mr-2">
+                                                      <div class="star__icon"></div>
+                                                    </div><span>(22)</span>
+                                                  </div>
+                                                </div>
+                                                <div class="product__info-color">
+                                                  <div class="color d-flex align-items-center"><span class="active mr-3 color__blue"></span><span class="mr-3 color__red"></span><span class="mr-3 color__yellow"></span></div>
+                                                </div>
+                                              </div>
+                                            </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="exclusive__tab-item" data-tab="special">
+                  <div class="row">
+                    <div class="col-lg-3 col-md-4 mt-3 p-mb-0 mt-mb-0">
+                                            <div class="product">
+                                              <div class="product__hot"><span>Hot</span></div>
+                                              <div class="product__img"><img src="../assets/images/product/product_img2.jpg" alt="">
+                                                <ul class="product__img-action d-flex align-items-center justify-content-between">
+                                                  <li><a class="hover" href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="fas fa-random"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="fas fa-search-plus"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="far fa-heart"></i></a></li>
+                                                </ul>
+                                              </div>
+                                              <div class="product__info p-3">
+                                                <h6 class="product__info-title"> <a class="hover" href="#">blue dress for woman</a></h6>
+                                                <div class="product__info-price"><span class="price mr-1">$45.00</span>
+                                                  <del>$55.25</del><span class="price__sale ml-2">35% Off</span>
+                                                </div>
+                                                <div class="product__info-rate">
+                                                  <div class="star">
+                                                    <div class="star__wrap mr-2">
+                                                      <div class="star__icon"></div>
+                                                    </div><span>(22)</span>
+                                                  </div>
+                                                </div>
+                                                <div class="product__info-color">
+                                                  <div class="color d-flex align-items-center"><span class="active mr-3 color__blue"></span><span class="mr-3 color__red"></span><span class="mr-3 color__yellow"></span></div>
+                                                </div>
+                                              </div>
+                                            </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 mt-3 p-mb-0 mt-mb-0">
+                                            <div class="product">
+                                              <div class="product__img"><img src="../assets/images/product/product_img4.jpg" alt="">
+                                                <ul class="product__img-action d-flex align-items-center justify-content-between">
+                                                  <li><a class="hover" href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="fas fa-random"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="fas fa-search-plus"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="far fa-heart"></i></a></li>
+                                                </ul>
+                                              </div>
+                                              <div class="product__info p-3">
+                                                <h6 class="product__info-title"> <a class="hover" href="#">blue dress for woman</a></h6>
+                                                <div class="product__info-price"><span class="price mr-1">$45.00</span>
+                                                  <del>$55.25</del><span class="price__sale ml-2">35% Off</span>
+                                                </div>
+                                                <div class="product__info-rate">
+                                                  <div class="star">
+                                                    <div class="star__wrap mr-2">
+                                                      <div class="star__icon"></div>
+                                                    </div><span>(22)</span>
+                                                  </div>
+                                                </div>
+                                                <div class="product__info-color">
+                                                  <div class="color d-flex align-items-center"><span class="active mr-3 color__blue"></span><span class="mr-3 color__red"></span><span class="mr-3 color__yellow"></span></div>
+                                                </div>
+                                              </div>
+                                            </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 mt-3 p-mb-0 mt-mb-0">
+                                            <div class="product">
+                                              <div class="product__img"><img src="../assets/images/product/product_img3.jpg" alt="">
+                                                <ul class="product__img-action d-flex align-items-center justify-content-between">
+                                                  <li><a class="hover" href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="fas fa-random"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="fas fa-search-plus"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="far fa-heart"></i></a></li>
+                                                </ul>
+                                              </div>
+                                              <div class="product__info p-3">
+                                                <h6 class="product__info-title"> <a class="hover" href="#">blue dress for woman</a></h6>
+                                                <div class="product__info-price"><span class="price mr-1">$45.00</span>
+                                                  <del>$55.25</del><span class="price__sale ml-2">35% Off</span>
+                                                </div>
+                                                <div class="product__info-rate">
+                                                  <div class="star">
+                                                    <div class="star__wrap mr-2">
+                                                      <div class="star__icon"></div>
+                                                    </div><span>(22)</span>
+                                                  </div>
+                                                </div>
+                                                <div class="product__info-color">
+                                                  <div class="color d-flex align-items-center"><span class="active mr-3 color__blue"></span><span class="mr-3 color__red"></span><span class="mr-3 color__yellow"></span></div>
+                                                </div>
+                                              </div>
+                                            </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 mt-3 p-mb-0 mt-mb-0">
+                                            <div class="product">
+                                              <div class="product__sale"><span>Sale</span></div>
+                                              <div class="product__img"><img src="../assets/images/product/product_img12.jpg" alt="">
+                                                <ul class="product__img-action d-flex align-items-center justify-content-between">
+                                                  <li><a class="hover" href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="fas fa-random"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="fas fa-search-plus"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="far fa-heart"></i></a></li>
+                                                </ul>
+                                              </div>
+                                              <div class="product__info p-3">
+                                                <h6 class="product__info-title"> <a class="hover" href="#">blue dress for woman</a></h6>
+                                                <div class="product__info-price"><span class="price mr-1">$45.00</span>
+                                                  <del>$55.25</del><span class="price__sale ml-2">35% Off</span>
+                                                </div>
+                                                <div class="product__info-rate">
+                                                  <div class="star">
+                                                    <div class="star__wrap mr-2">
+                                                      <div class="star__icon"></div>
+                                                    </div><span>(22)</span>
+                                                  </div>
+                                                </div>
+                                                <div class="product__info-color">
+                                                  <div class="color d-flex align-items-center"><span class="active mr-3 color__blue"></span><span class="mr-3 color__red"></span><span class="mr-3 color__yellow"></span></div>
+                                                </div>
+                                              </div>
+                                            </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 mt-3 p-mb-0 mt-mb-0">
+                                            <div class="product">
+                                              <div class="product__img"><img src="../assets/images/product/product_img9.jpg" alt="">
+                                                <ul class="product__img-action d-flex align-items-center justify-content-between">
+                                                  <li><a class="hover" href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="fas fa-random"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="fas fa-search-plus"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="far fa-heart"></i></a></li>
+                                                </ul>
+                                              </div>
+                                              <div class="product__info p-3">
+                                                <h6 class="product__info-title"> <a class="hover" href="#">blue dress for woman</a></h6>
+                                                <div class="product__info-price"><span class="price mr-1">$45.00</span>
+                                                  <del>$55.25</del><span class="price__sale ml-2">35% Off</span>
+                                                </div>
+                                                <div class="product__info-rate">
+                                                  <div class="star">
+                                                    <div class="star__wrap mr-2">
+                                                      <div class="star__icon"></div>
+                                                    </div><span>(22)</span>
+                                                  </div>
+                                                </div>
+                                                <div class="product__info-color">
+                                                  <div class="color d-flex align-items-center"><span class="active mr-3 color__blue"></span><span class="mr-3 color__red"></span><span class="mr-3 color__yellow"></span></div>
+                                                </div>
+                                              </div>
+                                            </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 mt-3 p-mb-0 mt-mb-0">
+                                            <div class="product">
+                                              <div class="product__new"><span>New </span></div>
+                                              <div class="product__img"><img src="../assets/images/product/product_img6.jpg" alt="">
+                                                <ul class="product__img-action d-flex align-items-center justify-content-between">
+                                                  <li><a class="hover" href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="fas fa-random"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="fas fa-search-plus"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="far fa-heart"></i></a></li>
+                                                </ul>
+                                              </div>
+                                              <div class="product__info p-3">
+                                                <h6 class="product__info-title"> <a class="hover" href="#">blue dress for woman</a></h6>
+                                                <div class="product__info-price"><span class="price mr-1">$45.00</span>
+                                                  <del>$55.25</del><span class="price__sale ml-2">35% Off</span>
+                                                </div>
+                                                <div class="product__info-rate">
+                                                  <div class="star">
+                                                    <div class="star__wrap mr-2">
+                                                      <div class="star__icon"></div>
+                                                    </div><span>(22)</span>
+                                                  </div>
+                                                </div>
+                                                <div class="product__info-color">
+                                                  <div class="color d-flex align-items-center"><span class="active mr-3 color__blue"></span><span class="mr-3 color__red"></span><span class="mr-3 color__yellow"></span></div>
+                                                </div>
+                                              </div>
+                                            </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 mt-3 p-mb-0 mt-mb-0">
+                                            <div class="product">
+                                              <div class="product__img"><img src="../assets/images/product/product_img8.jpg" alt="">
+                                                <ul class="product__img-action d-flex align-items-center justify-content-between">
+                                                  <li><a class="hover" href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="fas fa-random"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="fas fa-search-plus"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="far fa-heart"></i></a></li>
+                                                </ul>
+                                              </div>
+                                              <div class="product__info p-3">
+                                                <h6 class="product__info-title"> <a class="hover" href="#">blue dress for woman</a></h6>
+                                                <div class="product__info-price"><span class="price mr-1">$45.00</span>
+                                                  <del>$55.25</del><span class="price__sale ml-2">35% Off</span>
+                                                </div>
+                                                <div class="product__info-rate">
+                                                  <div class="star">
+                                                    <div class="star__wrap mr-2">
+                                                      <div class="star__icon"></div>
+                                                    </div><span>(22)</span>
+                                                  </div>
+                                                </div>
+                                                <div class="product__info-color">
+                                                  <div class="color d-flex align-items-center"><span class="active mr-3 color__blue"></span><span class="mr-3 color__red"></span><span class="mr-3 color__yellow"></span></div>
+                                                </div>
+                                              </div>
+                                            </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 mt-3 p-mb-0 mt-mb-0">
+                                            <div class="product">
+                                              <div class="product__hot"><span>Hot</span></div>
+                                              <div class="product__img"><img src="../assets/images/product/product_img7.jpg" alt="">
+                                                <ul class="product__img-action d-flex align-items-center justify-content-between">
+                                                  <li><a class="hover" href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="fas fa-random"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="fas fa-search-plus"></i></a></li>
+                                                  <li><a class="hover" href="#"><i class="far fa-heart"></i></a></li>
+                                                </ul>
+                                              </div>
+                                              <div class="product__info p-3">
+                                                <h6 class="product__info-title"> <a class="hover" href="#">blue dress for woman</a></h6>
+                                                <div class="product__info-price"><span class="price mr-1">$45.00</span>
+                                                  <del>$55.25</del><span class="price__sale ml-2">35% Off</span>
+                                                </div>
+                                                <div class="product__info-rate">
+                                                  <div class="star">
+                                                    <div class="star__wrap mr-2">
+                                                      <div class="star__icon"></div>
+                                                    </div><span>(22)</span>
+                                                  </div>
+                                                </div>
+                                                <div class="product__info-color">
+                                                  <div class="color d-flex align-items-center"><span class="active mr-3 color__blue"></span><span class="mr-3 color__red"></span><span class="mr-3 color__yellow"></span></div>
+                                                </div>
+                                              </div>
+                                            </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="single-banner mt-5 mt-6">
+        <div class="container">
+          <div class="row align-items-center flex-column-reverse">
+            <div class="col-xl-5 col-md-5 col-12">
+              <div class="single-banner__img"><img src="../assets/images/single-banner/tranding_img.png" alt=""></div>
+            </div>
+            <div class="col-xl-7 col-md-7 pl-5 col-12">
+              <div class="single-banner__info pl-5"><span>New season trends!</span>
+                <h2 class="mt-3 mb-3">Best Summer Collection</h2>
+                <h5 class="mb-4">Sale Get up to 50% Off</h5><a class="hover btn btn-red" href="#">Shop Now </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="featured p-6">
+        <div class="container"> 
+          <div class="row justify-content-center mb-3">
+            <div class="col-7 text-center">
+              <h2 class="title">Featured Products</h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <div class="featured__product owl-carousel">
+                                <div class="product">
+                                  <div class="product__hot"><span>Hot</span></div>
+                                  <div class="product__img"><img src="../assets/images/product/product_img1.jpg" alt="">
+                                    <ul class="product__img-action d-flex align-items-center justify-content-between">
+                                      <li><a class="hover" href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                                      <li><a class="hover" href="#"><i class="fas fa-random"></i></a></li>
+                                      <li><a class="hover" href="#"><i class="fas fa-search-plus"></i></a></li>
+                                      <li><a class="hover" href="#"><i class="far fa-heart"></i></a></li>
+                                    </ul>
+                                  </div>
+                                  <div class="product__info p-3">
+                                    <h6 class="product__info-title"> <a class="hover" href="#">Blue Dress For Woman</a></h6>
+                                    <div class="product__info-price"><span class="price mr-1">$45.00</span>
+                                      <del>$55.25</del><span class="price__sale ml-2">25% Off</span>
+                                    </div>
+                                    <div class="product__info-rate">
+                                      <div class="star">
+                                        <div class="star__wrap mr-2">
+                                          <div class="star__icon"></div>
+                                        </div><span>(22)</span>
+                                      </div>
+                                    </div>
+                                    <div class="product__info-color">
+                                      <div class="color d-flex align-items-center"><span class="active mr-3 color__blue"></span><span class="mr-3 color__red"></span><span class="mr-3 color__yellow"></span></div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="product">
+                                  <div class="product__sale"><span>Sale</span></div>
+                                  <div class="product__img"><img src="../assets/images/product/product_img2.jpg" alt="">
+                                    <ul class="product__img-action d-flex align-items-center justify-content-between">
+                                      <li><a class="hover" href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                                      <li><a class="hover" href="#"><i class="fas fa-random"></i></a></li>
+                                      <li><a class="hover" href="#"><i class="fas fa-search-plus"></i></a></li>
+                                      <li><a class="hover" href="#"><i class="far fa-heart"></i></a></li>
+                                    </ul>
+                                  </div>
+                                  <div class="product__info p-3">
+                                    <h6 class="product__info-title"> <a class="hover" href="#">Lether Gray Tuxedo</a></h6>
+                                    <div class="product__info-price"><span class="price mr-1">$55.00</span>
+                                      <del>$95.25</del><span class="price__sale ml-2">25% Off</span>
+                                    </div>
+                                    <div class="product__info-rate">
+                                      <div class="star">
+                                        <div class="star__wrap mr-2">
+                                          <div class="star__icon"></div>
+                                        </div><span>(22)</span>
+                                      </div>
+                                    </div>
+                                    <div class="product__info-color">
+                                      <div class="color d-flex align-items-center"><span class="active mr-3 color__blue"></span><span class="mr-3 color__red"></span><span class="mr-3 color__yellow"></span></div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="product">
+                                  <div class="product__img"><img src="../assets/images/product/product_img3.jpg" alt="">
+                                    <ul class="product__img-action d-flex align-items-center justify-content-between">
+                                      <li><a class="hover" href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                                      <li><a class="hover" href="#"><i class="fas fa-random"></i></a></li>
+                                      <li><a class="hover" href="#"><i class="fas fa-search-plus"></i></a></li>
+                                      <li><a class="hover" href="#"><i class="far fa-heart"></i></a></li>
+                                    </ul>
+                                  </div>
+                                  <div class="product__info p-3">
+                                    <h6 class="product__info-title"> <a class="hover" href="#">woman full sliv dress</a></h6>
+                                    <div class="product__info-price"><span class="price mr-1">$68.00</span>
+                                      <del>$99.25</del><span class="price__sale ml-2">25% Off</span>
+                                    </div>
+                                    <div class="product__info-rate">
+                                      <div class="star">
+                                        <div class="star__wrap mr-2">
+                                          <div class="star__icon"></div>
+                                        </div><span>(22)</span>
+                                      </div>
+                                    </div>
+                                    <div class="product__info-color">
+                                      <div class="color d-flex align-items-center"><span class="active mr-3 color__blue"></span><span class="mr-3 color__red"></span><span class="mr-3 color__yellow"></span></div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="product">
+                                  <div class="product__new"><span>New </span></div>
+                                  <div class="product__img"><img src="../assets/images/product/product_img4.jpg" alt="">
+                                    <ul class="product__img-action d-flex align-items-center justify-content-between">
+                                      <li><a class="hover" href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                                      <li><a class="hover" href="#"><i class="fas fa-random"></i></a></li>
+                                      <li><a class="hover" href="#"><i class="fas fa-search-plus"></i></a></li>
+                                      <li><a class="hover" href="#"><i class="far fa-heart"></i></a></li>
+                                    </ul>
+                                  </div>
+                                  <div class="product__info p-3">
+                                    <h6 class="product__info-title"> <a class="hover" href="#">light blue Shirt</a></h6>
+                                    <div class="product__info-price"><span class="price mr-1">$69.00</span>
+                                      <del>$89.00</del><span class="price__sale ml-2">20% Off</span>
+                                    </div>
+                                    <div class="product__info-rate">
+                                      <div class="star">
+                                        <div class="star__wrap mr-2">
+                                          <div class="star__icon"></div>
+                                        </div><span>(22)</span>
+                                      </div>
+                                    </div>
+                                    <div class="product__info-color">
+                                      <div class="color d-flex align-items-center"><span class="active mr-3 color__blue"></span><span class="mr-3 color__red"></span><span class="mr-3 color__yellow"></span></div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="product">
+                                  <div class="product__img"><img src="../assets/images/product/product_img5.jpg" alt="">
+                                    <ul class="product__img-action d-flex align-items-center justify-content-between">
+                                      <li><a class="hover" href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                                      <li><a class="hover" href="#"><i class="fas fa-random"></i></a></li>
+                                      <li><a class="hover" href="#"><i class="fas fa-search-plus"></i></a></li>
+                                      <li><a class="hover" href="#"><i class="far fa-heart"></i></a></li>
+                                    </ul>
+                                  </div>
+                                  <div class="product__info p-3">
+                                    <h6 class="product__info-title"> <a class="hover" href="#">blue dress for woman</a></h6>
+                                    <div class="product__info-price"><span class="price mr-1">$45.00</span>
+                                      <del>$55.25</del><span class="price__sale ml-2">35% Off</span>
+                                    </div>
+                                    <div class="product__info-rate">
+                                      <div class="star">
+                                        <div class="star__wrap mr-2">
+                                          <div class="star__icon"></div>
+                                        </div><span>(22)</span>
+                                      </div>
+                                    </div>
+                                    <div class="product__info-color">
+                                      <div class="color d-flex align-items-center"><span class="active mr-3 color__blue"></span><span class="mr-3 color__red"></span><span class="mr-3 color__yellow"></span></div>
+                                    </div>
+                                  </div>
+                                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="feedback p-6">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-7 text-center">
+              <h3 class="title mb-4">Our Client Say!</h3>
+            </div>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-lg-9 col-md-10">
+              <div class="feedback__slider owl-carousel">
+                <div class="feedback__slider-item">
+                  <div class="feedback__slider-content text-center">
+                    <p class="mb-4">Lorem psum dolor sit amet, consectetur adipisicing elit. A aliquam amet animi blanditiis consequatur debitis dicta distinctio, enim error eum iste libero modi nam natus perferendis possimus quasi sint sit tempora voluptatem.</p>
+                  </div>
+                  <div class="feedback__slider-author d-flex justify-content-center align-items-center"><img src="../assets/images/feedback/user_img1.jpg" alt="">
+                    <div class="author__info ml-3">
+                      <h6 class="author__info-name mb-1">Lissa Castro</h6><span class="author__info-job">Designer</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="feedback__slider-item">
+                  <div class="feedback__slider-content text-center">
+                    <p class="mb-4">Lorem psum dolor sit amet, consectetur adipisicing elit. A aliquam amet animi blanditiis consequatur debitis dicta distinctio, enim error eum iste libero modi nam natus perferendis possimus quasi sint sit tempora voluptatem.</p>
+                  </div>
+                  <div class="feedback__slider-author d-flex justify-content-center align-items-center"><img src="../assets/images/feedback/user_img2.jpg" alt="">
+                    <div class="author__info ml-3">
+                      <h6 class="author__info-name mb-1">Lissa Castro</h6><span class="author__info-job">Designer</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="feedback__slider-item">
+                  <div class="feedback__slider-content text-center">
+                    <p class="mb-4">Lorem psum dolor sit amet, consectetur adipisicing elit. A aliquam amet animi blanditiis consequatur debitis dicta distinctio, enim error eum iste libero modi nam natus perferendis possimus quasi sint sit tempora voluptatem.</p>
+                  </div>
+                  <div class="feedback__slider-author d-flex justify-content-center align-items-center"><img src="../assets/images/feedback/user_img3.jpg" alt="">
+                    <div class="author__info ml-3">
+                      <h6 class="author__info-name mb-1">Lissa Castro</h6><span class="author__info-job">Designer</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="feedback__slider-item">
+                  <div class="feedback__slider-content text-center">
+                    <p class="mb-4">Lorem psum dolor sit amet, consectetur adipisicing elit. A aliquam amet animi blanditiis consequatur debitis dicta distinctio, enim error eum iste libero modi nam natus perferendis possimus quasi sint sit tempora voluptatem.</p>
+                  </div>
+                  <div class="feedback__slider-author d-flex justify-content-center align-items-center"><img src="../assets/images/feedback/user_img4.jpg" alt="">
+                    <div class="author__info ml-3">
+                      <h6 class="author__info-name mb-1">Lissa Castro</h6><span class="author__info-job">Designer</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="service p-6">
+        <div class="container">
+          <div class="row">
+            <div class="col-xl-4 col-md-12">
+              <div class="service__box text-center pr-5">
+                <div class="service__box-icon mb-3"><?xml version="1.0" encoding="UTF-8"?><svg enable-background="new 0 0 512.001 512.001" version="1.1" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><path d="m401.85 295.32s-64.599-39.86-64.68-39.91c-4.649-2.869-10.91-1.356-13.77 3.259-2.866 4.625-1.345 10.921 3.26 13.76 0 0 64.64 39.886 64.68 39.91 4.647 2.867 10.903 1.392 13.76-3.259 2.857-4.652 1.401-10.893-3.25-13.76z"/><path d="m297.88 232.92c-6.387-1e-3 -11.203 6.079-9.743 12.295 0.581 2.476 2.283 4.725 4.525 6.145 1.539 0.975 3.333 1.56 5.196 1.56 3.499 0 6.689-1.769 8.519-4.748 3.898-6.346-1.002-15.251-8.497-15.252z"/><path d="m194.33 258.15c-2.821-4.493-9.325-5.945-13.792-3.123 0 0-64.182 40.472-64.29 40.54-4.625 2.916-6.036 9.164-3.123 13.785 1.751 2.779 5.13 4.408 8.475 4.502 1.882 0.053 3.753-0.38 5.318-1.367 0 0 64.245-40.521 64.29-40.55 4.624-2.916 6.028-9.159 3.122-13.787z"/><path d="m219.69 232.14c-4.644 0-8.713 3.264-9.74 7.788-1.399 6.163 3.48 12.212 9.76 12.212 4.635 0 8.727-3.263 9.75-7.791 1.401-6.2-3.433-12.209-9.77-12.209z"/><path d="m509.55 455.46c-3.624-4.168-9.94-4.608-14.108-0.984-10.663 9.271-20.531 18.883-34.522 22.75-15.553 4.298-30.334 0.906-44.41-6.132l52.079-175.22c1.296-4.359-0.514-9.044-4.403-11.401l-48.183-29.195v-85.253c0-5.522-4.477-10-10-10h-20v-30c0-5.522-4.477-10-10-10h-31.5v-30c0-5.522-4.477-10-10-10h-48.5v-70c0-5.522-4.477-10-10-10h-40c-5.523 0-10 4.478-10 10v70h-48.5c-5.523 0-10 4.478-10 10v30h-31.5c-5.523 0-10 4.478-10 10v30h-20c-5.523 0-10 4.478-10 10v85.253l-48.182 29.194c-3.89 2.357-5.699 7.042-4.403 11.401 0 0 51.951 174.79 51.973 174.87-0.887-2.984-16.889-4.949-19.718-5.315-29.117-3.768-51.258 10.818-72.232 29.055-4.168 3.624-4.608 9.939-0.985 14.107 3.459 3.978 9.896 4.646 14.107 0.985 21.608-18.784 45.969-33.103 74.559-18.806 25.864 12.931 52.636 18.476 79.575 4.3 21.722-11.434 42.684-21.307 66.93-9.763l24.927 11.87c21.326 10.156 45.674 9.922 66.799-0.642 13.018-6.509 26.249-15.171 41.119-16.193 14.576-1.001 28.66 4.426 41.467 10.835 16.919 8.46 36.726 10.15 54.894 4.971 16.735-4.771 28.914-15.429 41.731-26.573 4.169-3.623 4.609-9.938 0.986-14.106zm-113.55-275.44v63.135l-104.2-63.135h104.2zm-150-160h20v60h-20v-60zm-58.5 80h137v20h-137v-20zm-71.5 80h104.2l-104.2 63.135v-63.135zm130 287.12c2e-3 -1.777-14.255-5.055-16.12-5.459-17.404-3.767-36.088-1.375-51.866 6.93-11.448 6.025-22.493 13.054-35.586 14.74l-0.072 9e-3c-7.65 0.93-15.48 0.367-22.884-1.792l-54.687-183.99 181.22-109.8v279.36zm-100-307.12v-20h220v20h-220zm252.02 303.06c0.111-3.094-28.039-3.066-29.925-2.867-17.358 1.836-32.374 10.767-47.692 18.426-18.096 9.048-36.716 6.447-54.405-1.98v-288.89l181.22 109.8-49.193 165.51z"/></svg>
+                </div>
+                <h3 class="service__box-title mb-3">Free Delivery</h3>
+                <p class="service__box-content">If you are going to use of Lorem, you need to be sure there anything</p>
+              </div>
+            </div>
+            <div class="col-xl-4 col-md-12">
+              <div class="service__box text-center pr-5">
+                <div class="service__box-icon mb-3"><?xml version="1.0" encoding="UTF-8"?><svg enable-background="new 0 0 511.997 511.997" version="1.1" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">		<path d="m504.9 297.47c-7.174-10.024-19.126-16.76-31.189-17.58-9.847-0.663-18.77 2.662-25.118 9.382-1.393 1.474-2.896 3.093-4.486 4.827-7.023-6.434-16.226-10.574-25.504-11.204-9.851-0.66-18.771 2.663-25.118 9.382-13.817 14.626-38.283 43.198-57.497 65.944-2.506-1.482-5.187-2.704-8.023-3.621-9.184-3.955-135.79-58.024-191.9-58.024-90.651 0-132.3 48.725-134.02 50.798-2.651 3.182-2.221 7.901 0.952 10.561 3.174 2.661 7.91 2.244 10.58-0.922 0.096-0.113 9.825-11.505 29.697-22.73 18.316-10.344 49.284-22.678 92.795-22.678 53.914 0 184.97 56.372 186.29 56.941 2.409 1.039 4.894 1.834 7.094 3.302 2.077 1.386 3.936 3.097 5.494 5.048 3.026 3.791 4.921 8.481 5.319 13.319 0.837 10.136-4.852 19.929-14.035 24.258-5.791 2.73-11.913 2.812-17.997 1.145l-81.996-22.583c-3.948-1.088-8.154 1.303-9.241 5.249-1.087 3.948 1.302 8.153 5.249 9.24l81.882 22.552c9.949 3.069 20.821 2.065 30.039-2.769 9.363-4.909 16.254-13.172 19.402-23.263 1.028-3.292 1.608-6.651 1.765-10.008l21.992-2.316c1.946-0.205 3.736-1.161 4.989-2.665 0.542-0.651 54.467-65.388 77.213-89.464 9.454-10.012 26.334-2.915 33.161 6.623 10.498 14.667-2.548 30.678-6.796 35.237-20.876 22.398-59.157 68.545-66.038 76.863l-155.8 77.901-80.161-33.752c-3.774-1.589-8.253 0.234-9.842 4.01-1.589 3.774 0.235 8.252 4.009 9.841l83.348 35.093c2.004 0.845 4.333 0.768 6.277-0.204l160.32-80.158c0.938-0.469 1.767-1.129 2.435-1.939 0.44-0.533 44.259-53.593 66.456-77.41 16.338-17.527 19.414-38.309 8.02-54.226zm-132.19 79.625-19.581 2.062c-1.388-3.93-3.39-7.623-5.914-10.938 16.367-19.374 42.963-50.556 57.192-65.618 4.111-4.353 9.431-4.969 13.173-4.708 5.891 0.401 11.932 3.18 16.475 7.383-22.546 25.452-53.241 62.112-61.345 71.819z"/>		<path d="m146.99 446.94-32.061-13.5c-0.923-0.389-1.915-0.589-2.917-0.589h-104.2c-4.15 0-7.515 3.364-7.515 7.515s3.365 7.515 7.515 7.515h102.69l30.662 12.91c4.034 1.699 8.762-0.509 10.083-4.667 1.16-3.65-0.723-7.7-4.249-9.184z"/>		<path d="m399.52 250.57-31.999 4.572c26.021-27.879 40.576-64.402 40.576-103.34 0-83.701-68.097-151.8-151.8-151.8-83.702 0-151.8 68.097-151.8 151.8 0 33.585 10.746 65.412 31.076 92.038 19.676 25.77 47.577 44.886 78.565 53.827 4.099 1.181 8.451-1.397 9.407-5.545 0.885-3.835-1.465-7.805-5.241-8.896-58.159-16.78-98.778-70.825-98.778-131.42 0-75.415 61.355-136.77 136.77-136.77 75.415 0 136.77 61.354 136.77 136.77 0 37.281-14.8 72.111-41.081 97.745v-39.631c0-4.151-3.364-7.515-7.515-7.515s-7.515 3.364-7.515 7.515v56.11c0 4.493 4.126 8.079 8.578 7.44l56.11-8.016c4.054-0.579 6.957-4.448 6.377-8.502-0.579-4.05-4.453-6.949-8.502-6.376z"/>		<path d="m256.3 144.28h-8.016c-9.116 0-16.532-7.417-16.532-16.532 0-9.116 7.417-16.533 16.532-16.533h32.063c4.151 0 7.515-3.364 7.515-7.515s-3.364-7.515-7.515-7.515h-16.533v-8.517c0-4.151-3.364-7.515-7.515-7.515-4.15 0-7.515 3.364-7.515 7.515v8.517h-0.501c-17.403 0-31.562 14.159-31.562 31.562s14.159 31.562 31.562 31.562h8.016c9.116 0 16.533 7.417 16.533 16.532s-7.417 16.532-16.533 16.532h-32.063c-4.15 0-7.515 3.364-7.515 7.515s3.365 7.515 7.515 7.515h24.548v8.517c0 4.151 3.365 7.515 7.515 7.515 4.151 0 7.515-3.364 7.515-7.515v-9.427c13.786-3.381 24.047-15.837 24.047-30.651 1e-3 -17.403-14.158-31.562-31.561-31.562z"/></svg>
+                </div>
+                <h3 class="service__box-title mb-3">Free Delivery</h3>
+                <p class="service__box-content">If you are going to use of Lorem, you need to be sure there anything</p>
+              </div>
+            </div>
+            <div class="col-xl-4 col-md-12">
+              <div class="service__box text-center pr-5 no-border">
+                <div class="service__box-icon mb-3"><svg id="Capa_1" enable-background="new 0 0 512 512" height="512" viewBox="0 0 512 512" width="512" xmlns="http://www.w3.org/2000/svg"><g><path d="m244.663 337.696c-7.25.091-14.953.15-21.215.158 3.865-5.157 9.334-12.61 16.829-23.319 4.547-6.497 7.816-12.414 8.646-18.362 2.173-15.55-10.424-28.819-24.791-28.819-12.011 0-22.408 8.545-24.722 20.318-.799 4.064 1.849 8.007 5.913 8.806 4.064.795 8.007-1.85 8.806-5.913.935-4.757 5.142-8.21 10.003-8.21 5.482 0 9.968 4.351 10.186 9.781.192 4.78-2.643 8.531-6.33 13.799-10.957 15.655-17.495 24.217-21.008 28.816-5.346 7.001-8.145 14.683.168 17.453.989.33 27.913.616 37.704.493 4.142-.052 7.457-3.452 7.404-7.594-.051-4.144-3.461-7.498-7.593-7.407zm43.959-5.649c-.034 4.69-.07 9.192-.105 13.243-.035 4.142 3.293 7.529 7.436 7.564h.065c4.112 0 7.463-3.315 7.499-7.435.021-2.479.062-7.346.106-13.373h1.606c4.143 0 7.5-3.358 7.5-7.5s-3.357-7.5-7.5-7.5h-1.506c.101-17.027.155-35.41-.057-37.933-.455-5.431-3.711-9.861-8.296-11.286-4.548-1.412-9.401.357-12.985 4.734-4.002 4.89-22.586 38.244-28.187 48.35-2.697 4.867.935 11.185 6.561 11.135h27.863zm.193-41.699c.004 6.932-.035 16.633-.094 26.699h-15.191c5.734-10.216 11.341-20.03 15.285-26.699zm57.025 19.756c0-49.538-40.302-89.84-89.84-89.84s-89.84 40.302-89.84 89.84 40.302 89.84 89.84 89.84 89.84-40.301 89.84-89.84zm-164.68 0c0-41.267 33.573-74.84 74.84-74.84s74.84 33.573 74.84 74.84-33.573 74.84-74.84 74.84-74.84-33.572-74.84-74.84zm303.52-66.382v-17.462c0-60.434-23.537-117.254-66.276-159.993-42.733-42.733-99.553-66.267-159.994-66.267-25.978 0-51.407 4.332-75.583 12.874-3.905 1.38-5.952 5.665-4.572 9.57 1.379 3.906 5.665 5.952 9.57 4.573 22.567-7.974 46.315-12.017 70.585-12.017 56.435 0 109.487 21.974 149.386 61.873 39.906 39.906 61.884 92.959 61.884 149.387v5.106c-6.214-4.13-12.942-7.544-20.066-10.126-2.671-103.15-87.415-186.24-191.204-186.24-103.057 0-187.618 82.3-191.13 184.618-7.095 2.137-13.842 5.085-20.13 8.74v-2.099c0-56.433 21.974-109.486 61.873-149.387 14.336-14.335 30.501-26.481 48.045-36.099 3.632-1.991 4.962-6.55 2.971-10.182-1.99-3.632-6.548-4.961-10.182-2.971-18.791 10.301-36.099 23.304-51.441 38.646-42.731 42.734-66.266 99.554-66.266 159.994v12.905c-19.697 17.328-32.15 42.704-32.15 70.939 0 50.905 40.463 92.53 90.914 94.419 3.075 8.768 11.43 15.075 21.235 15.075h14.649c12.406 0 22.5-10.093 22.5-22.5v-173.987c0-12.407-10.094-22.5-22.5-22.5h-14.649c-9.805 0-18.16 6.306-21.235 15.075-2.862.107-5.691.349-8.483.706 5.139-92.549 82.265-166.392 175.979-166.392 94.138 0 171.276 74.174 176.036 167.145-4.358-.792-8.818-1.289-13.361-1.459-3.075-8.768-11.43-15.075-21.235-15.075h-14.649c-12.406 0-22.5 10.093-22.5 22.5v95.095c0 4.142 3.357 7.5 7.5 7.5s7.5-3.358 7.5-7.5v-95.095c0-4.136 3.364-7.5 7.5-7.5h14.649c4.136 0 7.5 3.364 7.5 7.5v173.987c0 4.136-3.364 7.5-7.5 7.5h-14.649c-4.136 0-7.5-3.364-7.5-7.5v-43.892c0-4.142-3.357-7.5-7.5-7.5s-7.5 3.358-7.5 7.5v43.892c0 12.348 9.999 22.4 22.324 22.496v22.504c0 15.391-12.521 27.913-27.912 27.913h-52.14c-3.465-15.422-17.368-26.99-33.953-26.99h-33.114c-19.184 0-34.791 15.472-34.791 34.49s15.608 34.489 34.791 34.489h33.114c16.585 0 30.488-11.568 33.953-26.989h52.14c23.662 0 42.912-19.25 42.912-42.913v-22.507c9.729-.075 18.004-6.352 21.06-15.068 50.452-1.888 90.915-43.513 90.915-94.419 0-25.851-10.44-49.306-27.32-66.382zm-380.031-20.611c0-4.136 3.364-7.5 7.5-7.5h14.649c4.136 0 7.5 3.364 7.5 7.5v173.987c0 4.136-3.364 7.5-7.5 7.5h-14.649c-4.136 0-7.5-3.364-7.5-7.5zm-15 7.646v158.695c-41.586-2.512-74.649-37.141-74.649-79.348s33.063-76.835 74.649-79.347zm181.372 266.243h-33.114c-10.913 0-19.791-8.743-19.791-19.49s8.878-19.489 19.791-19.489h33.114c10.913 0 19.791 8.743 19.791 19.49s-8.878 19.489-19.791 19.489zm151.33-107.548v-158.695c41.586 2.512 74.649 37.141 74.649 79.347s-33.063 76.836-74.649 79.348z"/></g></svg>
+                </div>
+                <h3 class="service__box-title mb-3">Free Delivery</h3>
+                <p class="service__box-content">If you are going to use of Lorem, you need to be sure there anything</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="subscribe py-5">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-xl-6 col-md-6 col-12">
+              <h3>Subscribe Our Newsletter</h3>
+            </div>
+            <div class="col-xl-6 col-md-6 col-12">
+              <div class="subscribe__email d-flex">
+                <input class="px-3" type="email" placeholder="Enter Email Address"><a class="btn subscribe__email-btn" href="">Subscribe</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer>
+        <div class="footer__top p-6">
+          <div class="container">
+            <div class="row">
+              <div class="col-xl-3 col-md-6">
+                <div class="widget"><a href="#"> <img class="mb-4" src="../assets/images/footer/logo_light.png" alt=""></a>
+                  <p class="mb-4">If you are going to use of Lorem Ipsum need to be sure there isn't hidden of text</p>
+                  <div class="widget__icon d-flex align-items-center justify-content-between"><ion-icon name="logo-facebook"></ion-icon>
+<ion-icon name="logo-twitter"></ion-icon>
+<ion-icon name="logo-google"></ion-icon>
+<ion-icon name="logo-youtube"></ion-icon>
+<ion-icon name="logo-instagram"></ion-icon>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-2 mt-3 col-md-3">
+                <div class="widget">
+                  <h6 class="widget__title mb-4">Useful Links</h6>
+                  <ul class="widget__list">
+                    <li><a class="hover mb-3" href="#">About Us</a></li>
+                    <li><a class="hover mb-3" href="#">FAQ</a></li>
+                    <li><a class="hover mb-3" href="#">Location</a></li>
+                    <li><a class="hover mb-3" href="#">Affiliates</a></li>
+                    <li><a class="hover mb-3" href="#">Contact</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-xl-2 mt-3 col-md-3">
+                <div class="widget">
+                  <h6 class="widget__title mb-4">Category</h6>
+                  <ul class="widget__list">
+                    <li><a class="hover mb-3" href="#">Men</a></li>
+                    <li><a class="hover mb-3" href="#">Woman</a></li>
+                    <li><a class="hover mb-3" href="#">Kids</a></li>
+                    <li><a class="hover mb-3" href="#">Best Saller</a></li>
+                    <li><a class="hover mb-3" href="#">New Arrivals</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-xl-2 mt-3 col-md-6">
+                <div class="widget">
+                  <h6 class="widget__title mb-4">My Account</h6>
+                  <ul class="widget__list">
+                    <li><a class="hover mb-3" href="#">My Account</a></li>
+                    <li><a class="hover mb-3" href="#">Discount</a></li>
+                    <li><a class="hover mb-3" href="#">Returns</a></li>
+                    <li><a class="hover mb-3" href="#">Orders History</a></li>
+                    <li><a class="hover mb-3" href="#">Order Tracking</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-xl-3 mt-3 col-md-6">
+                <div class="widget">
+                  <h6 class="widget__title mb-4">Contact Info</h6>
+                  <ul class="widget__info">
+                    <li class="d-flex align-items-baseline"><i class="ti-location-pin mr-3"></i>
+                      <p>123 Street, Old Trafford, New South London , UK</p>
+                    </li>
+                    <li class="d-flex align-items-baseline"><i class="ti-email mr-3"></i>
+                      <p>info@sitename.com</p>
+                    </li>
+                    <li class="d-flex align-items-baseline"><i class="ti-mobile mr-3"></i>
+                      <p>+ 457 789 789 65</p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer__bottom p-4 p-mb-5">
+          <div class="container">
+            <div class="row align-items-center justify-content-between"> 
+              <div class="col-md-6 col-xl-6 col-12 text-center">
+                <p>© 2020 All Rights Reserved by Bestwebcreator</p>
+              </div>
+              <div class="col-md-6 col-xl-6 col-12">
+                <ul class="footer__bottom-payment d-flex justify-content-end">
+                  <li><a class="ml-2" href="#"> <img src="../assets/images/footer/visa.png" alt=""></a></li>
+                  <li><a class="ml-2" href="#"> <img src="../assets/images/footer/discover.png" alt=""></a></li>
+                  <li><a class="ml-2" href="#"> <img src="../assets/images/footer/master_card.png" alt=""></a></li>
+                  <li><a class="ml-2" href="#"> <img src="../assets/images/footer/paypal.png" alt=""></a></li>
+                  <li><a class="ml-2" href="#"> <img src="../assets/images/footer/amarican_express.png" alt=""></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer><a class="scroll-top hover" href="#"><i class="fas fa-chevron-up"></i></a>
+    </div>
+  </body><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="./assets/js/owl.carousel.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.3.0/dist/lazyload.min.js"></script>
+<script src="https://rawgit.com/kswedberg/jquery-smooth-scroll/master/jquery.smooth-scroll.js"></script>
+<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+<script src="https://cdn.rawgit.com/matthieua/WOW/1.0.1/dist/wow.min.js"></script>    
+<script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+  <script src="./assets/js/main.js"></script>
+</html>
