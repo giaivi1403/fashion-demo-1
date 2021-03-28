@@ -15,6 +15,7 @@ $(document).ready(() => {
     searchBar.init();
     loader.init();
     popupModal.init();
+    menuMobile.init();
 });
 
 const sliderNav = {
@@ -296,5 +297,58 @@ const popupModal = {
         setTimeout(() => {
             $("#popup-modal").modal("show");
         }, 3500);
+    },
+};
+
+const menuMobile = {
+    init() {
+        let toggle = $(".list__sub-item .item__toggle");
+        let btn = $(".menu-mb__list-item .item__link");
+        let allSub = $(".menu-mb__list-item .list__sub");
+        let allSubToggle = $(".list__sub-item .list__sub-toggle");
+        this.toggleMenu(".list__sub", btn, allSub, allSubToggle);
+        this.toggleMenu(".list__sub-toggle", toggle, allSubToggle);
+        this.openAndCloseMenu(".menu-mb__overlay", allSub, allSubToggle);
+        this.openAndCloseMenu(".menu-mb__btn", allSub, allSubToggle);
+    },
+    resetMenu(menu) {
+        menu.each(function (i, item) {
+            if ($(item).hasClass("active")) {
+                $(item).removeClass("active");
+                $(item).slideUp();
+            }
+        });
+    },
+    toggleMenu(menu, btn, allSub, opt) {
+        btn.each(function (i, item) {
+            $(item).click(function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                let sub = $(this).parent().find(menu);
+                if (!sub.hasClass("active")) {
+                    if (allSub) menuMobile.resetMenu(allSub);
+                    if (opt) menuMobile.resetMenu(opt);
+                    sub.addClass("active");
+                    sub.slideDown();
+                } else {
+                    sub.removeClass("active");
+                    sub.slideUp();
+                }
+            });
+        });
+    },
+    openAndCloseMenu(item, allSub, opt) {
+        let overlay = $(".menu-mb__overlay");
+        let menu = $(".menu-mb__list");
+        $(item).click((e) => {
+            e.preventDefault();
+            $("body").toggleClass("modal-open");
+            if (allSub) menuMobile.resetMenu(allSub);
+            if (opt) menuMobile.resetMenu(opt);
+            let menu = $(".menu-mb__list");
+            menu.slideToggle();
+            menu.toggleClass("active");
+            overlay.toggleClass("active");
+        });
     },
 };
